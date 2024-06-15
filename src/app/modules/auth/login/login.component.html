@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div class="container" >
+  <div class="from-container">
+
+
+  <p class="loginText">Login</p>
+  <p>   </p>
+  <p-floatLabel>
+        <input pInputText id="username" [(ngModel)]="value1" />
+        <label for="username">Usuario</label>
+  </p-floatLabel>
+
+<div class="textarea1">
+  <div class="card flex justify-content-center">
+    <p-floatLabel>
+        <p-password [(ngModel)]="value2" [feedback]="false" />
+        <label for="password">Password</label>
+    </p-floatLabel>
+</div>
+</div>
+  </div>
+</div>

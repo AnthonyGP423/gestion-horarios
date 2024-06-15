@@ -21,29 +21,29 @@ export class MenuBarComponent implements OnInit {
     ngOnInit() {
         this.items = [
             {
-                label: 'Router',
-                icon: 'pi pi-palette',
+                label: 'Horarios',
+                icon: 'pi pi-clock',
                 items: [
                     {
-                        label: 'Installation',
-                        route: '/installation'
+                        label: 'Ver Horarios',
+                        route: '/principal/login'
                     },
                     {
-                        label: 'Configuration',
+                        label: 'Gestionar Horarios',
                         route: '/configuration'
                     }
                 ]
             },
             {
-                label: 'Programmatic',
-                icon: 'pi pi-link',
+                label: 'Reservas',
+                icon: 'pi pi-calendar',
                 command: () => {
                     this.router.navigate(['/installation']);
                 }
             },
             {
-                label: 'External',
-                icon: 'pi pi-home',
+                label: 'Usuarios',
+                icon: 'pi pi-users',
                 items: [
                     {
                         label: 'Angular',

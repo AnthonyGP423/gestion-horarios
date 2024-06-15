@@ -1,0 +1,30 @@
+.central {
+    color: white;
+    width: 900px;
+  	margin: 0 auto;
+  	padding: 0 20px 20px 20px;
+
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+.form-container {
+    background-color: #blue;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.loginText {
+  color:white;
+  text-shadow: 3px 3px 10px white;
+  text-align: center;
+
+}
+
+.textarea1 {
+  padding-top: 20px;
+}
