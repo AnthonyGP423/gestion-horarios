@@ -6,7 +6,6 @@ import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { Router } from '@angular/router';
 import { CheckboxModule } from 'primeng/checkbox';
-import { NombreService } from '../../../services/nombre.service';
 
 @Component({
   selector: 'app-login',
@@ -22,15 +21,13 @@ import { NombreService } from '../../../services/nombre.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent {
-  constructor(private router: Router, private nombreService: NombreService) {
-    // Asignar el valor de value1 a userName del servicio al inicializar el componente
-    this.nombreService.userName = this.value1 || '1';
-  }
+  export class LoginComponent {
+  constructor(private router: Router) {}
 
-  navigateToHorarios() {
+  navigateToMenu() {
     this.router.navigate(['/principal/menu']);
   }
+
   value1: string | undefined;
   value2!: string;
 

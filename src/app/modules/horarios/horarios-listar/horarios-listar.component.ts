@@ -10,12 +10,8 @@ import { Horario } from '../../../core/models/horario';
   templateUrl: './horarios-listar.component.html',
   styleUrl: './horarios-listar.component.scss',
 })
-export class HorariosListarComponent implements OnInit {
+export class HorariosListarComponent {
   ListHorarios: Horario[] = [
     { dia: 'martes', mes: 'marzo', descripcion: 'martes' },
   ];
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }
