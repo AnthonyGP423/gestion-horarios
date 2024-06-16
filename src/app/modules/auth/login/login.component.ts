@@ -6,23 +6,33 @@ import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { Router } from '@angular/router';
 import { CheckboxModule } from 'primeng/checkbox';
+import { NombreService } from '../../../services/nombre.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, InputTextModule, FloatLabelModule, PasswordModule, ButtonModule, CheckboxModule],
+  imports: [
+    FormsModule,
+    InputTextModule,
+    FloatLabelModule,
+    PasswordModule,
+    ButtonModule,
+    CheckboxModule,
+  ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private nombreService: NombreService) {
+    // Asignar el valor de value1 a userName del servicio al inicializar el componente
+    this.nombreService.userName = this.value1 || '1';
+  }
 
-    navigateToHorarios() {
-        this.router.navigate(['/principal/menu']);
-    }
+  navigateToHorarios() {
+    this.router.navigate(['/principal/menu']);
+  }
   value1: string | undefined;
   value2!: string;
 
   letra: string[] = [];
-
 }

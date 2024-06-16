@@ -11,9 +11,17 @@ import { DropdownModule } from 'primeng/dropdown';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, InputTextModule, FloatLabelModule, PasswordModule, ButtonModule, CheckboxModule, DropdownModule],
+  imports: [
+    FormsModule,
+    InputTextModule,
+    FloatLabelModule,
+    PasswordModule,
+    ButtonModule,
+    CheckboxModule,
+    DropdownModule,
+  ],
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
   nombre!: string;
@@ -36,7 +44,7 @@ export class RegisterComponent implements OnInit {
       { label: 'Soltero', value: 'Soltero' },
       { label: 'Casado', value: 'Casado' },
       { label: 'Divorciado', value: 'Divorciado' },
-      { label: 'Viudo', value: 'Viudo' }
+      { label: 'Viudo', value: 'Viudo' },
     ];
   }
 
@@ -50,6 +58,9 @@ export class RegisterComponent implements OnInit {
       alert('Debes aceptar los términos y condiciones');
       return;
     }
-    this.router.navigate(['/principal/menu']);
+
+    // Aquí puedes agregar la lógica de registro, como enviar los datos a un servidor
+
+    this.router.navigate(['/principal/inicio']);
   }
 }

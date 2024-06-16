@@ -1,41 +1,43 @@
-<link href="https://fonts.googleapis.com/css2?family=Playwrite+FR+Trad:wght@100..400&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Playwrite+FR+Trad:wght@100..400&display=swap"
+  rel="stylesheet"
+/>
 
 <div class="container">
-    <div class="form-container">
-        <p class="loginText playfont">Iniciar Sesión</p>
+  <div class="form-container">
+    <p class="loginText playfont">Iniciar Sesión</p>
 
-        <div class="textarea1 card">
-          <p-floatLabel>
-              <input pInputText id="username" [(ngModel)]="value1" />
-              <label for="username">Usuario</label>
-          </p-floatLabel>
-        </div>
-
-
-        <div class="textarea1 card">
-            <p-floatLabel>
-                <p-password [(ngModel)]="value2" [feedback]="false" />
-                <label for="password">Contraseña</label>
-            </p-floatLabel>
-        </div>
-
-        <div class="letra1 textarea1 card flex justify-content-left gap-3">
-            <div class="flex align-items-center">
-                <p-checkbox
-                    [(ngModel)]="letra"
-                    label="Recordarme"
-                    name="recordarContraseña"
-                    value="Cheese" />
-           </div>
-        </div>
-
-        <div class="card flex justify-content-center gap-3">
-            <p-button (click)="navigateToHorarios()" label="Continuar"></p-button>
-        </div>
-        <div class="letra1 card flex justify-content-center gap-3">
-  No tienes una cuenta? <a href="/principal/register" class="button-link">Regístrate</a>
-</div>
-
-
+    <div class="textarea1 card">
+      <p-floatLabel>
+        <input pInputText id="username" [(ngModel)]="value1" />
+        <label for="username">Usuario</label>
+      </p-floatLabel>
     </div>
+
+    <div class="textarea1 card">
+      <p-floatLabel>
+        <p-password [(ngModel)]="value2" [feedback]="false" />
+        <label for="password">Contraseña</label>
+      </p-floatLabel>
+    </div>
+
+    <div class="letra1 textarea1 card flex justify-content-left gap-3">
+      <div class="flex align-items-center">
+        <p-checkbox
+          [(ngModel)]="letra"
+          label="Recordarme"
+          name="recordarContraseña"
+          value="Cheese"
+        />
+      </div>
+    </div>
+
+    <div class="card flex justify-content-center gap-3">
+      <p-button (click)="navigateToHorarios()" label="Continuar"></p-button>
+    </div>
+    <div class="letra1 card flex justify-content-center gap-3">
+      No tienes una cuenta?
+      <a href="/principal/register" class="button-link">Regístrate</a>
+    </div>
+  </div>
 </div>
