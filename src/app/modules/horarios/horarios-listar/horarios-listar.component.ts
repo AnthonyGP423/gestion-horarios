@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TableModule } from 'primeng/table';
+import { CommonModule } from '@angular/common';
+import { Horario } from '../../../core/models/horario';
 
 @Component({
   selector: 'app-horarios-listar',
   standalone: true,
-  imports: [],
+  imports: [TableModule, CommonModule],
   templateUrl: './horarios-listar.component.html',
-  styleUrl: './horarios-listar.component.scss'
+  styleUrl: './horarios-listar.component.scss',
 })
 export class HorariosListarComponent {
-
+  ListHorarios: Horario[] = [
+    { dia: 'martes', mes: 'marzo', descripcion: 'martes' },
+  ];
 }

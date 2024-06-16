@@ -1,1 +1,22 @@
-<p>horarios-listar works!</p>
+<div class="contenedor">
+  <div class="card">
+    <p-table [value]="ListHorarios" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Dia</th>
+          <th>Mes</th>
+          <th>Descripcion</th>
+          <th>Turno</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-horario>
+        <tr>
+          <td>{{ horario.dia }}</td>
+          <td>{{ horario.mes }}</td>
+          <td>{{ horario.descripcion }}</td>
+          <td>{{ horario.quantity }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
