@@ -11,19 +11,22 @@ import { MenuBarComponent} from './shared/components/menu-bar/menu-bar.component
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'principal' },
-    {
-        path: 'principal', component: MainLayoutComponent, children: [
-            { path: '', pathMatch: 'full', redirectTo: 'login' }, // Redirige a login como página de inicio
-            { path: 'login', component: LoginComponent },
-            { path: 'inicio', component: HomeComponent },
-            { path: 'register', component: RegisterComponent },
+  {
+    path: 'principal', component: MainLayoutComponent, children: [
+        { path: '', pathMatch: 'full', redirectTo: 'login' }, // Redirige a login como página de inicio
+        { path: 'login', component: LoginComponent },
+        { path: 'register', component: RegisterComponent },
+        {
+          path: 'menu', component: HomeComponent, children: [
+            { path: '', pathMatch: 'full', redirectTo: 'horarios' }, // Redirige a horarios por defecto
             { path: 'horarios', component: HorariosListarComponent },
             { path: 'reservas', component: ReservasListarComponent },
-            { path: 'usuarios', component: UsuariosListarComponent },
-        ]
-    }
+            { path: 'usuarios', component: UsuariosListarComponent }
+          ]
+        }
+    ]
+  }
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

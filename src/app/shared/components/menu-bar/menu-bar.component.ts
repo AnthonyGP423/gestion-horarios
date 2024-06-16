@@ -20,39 +20,35 @@ export class MenuBarComponent implements OnInit {
 
     ngOnInit() {
         this.items = [
-            {
-                label: 'Horarios',
-                icon: 'pi pi-clock',
-                items: [
-                    {
-                        label: 'Ver Horarios',
-                        route: '/principal/login'
-                    },
-                    {
-                        label: 'Gestionar Horarios',
-                        route: '/configuration'
-                    }
-                ]
-            },
-            {
-                label: 'Reservas',
-                icon: 'pi pi-calendar',
-                command: () => {
-                    this.router.navigate(['/installation']);
-                }
-            },
+          {
+              label: 'Horarios',
+              icon: 'pi pi-clock',
+              items: [
+                  {
+                      label: 'Gestionar Horarios',
+                      route: '/principal/menu/horarios'
+                  }
+              ]
+          },
+          {
+              label: 'Reservas',
+              icon: 'pi pi-calendar-plus',
+              items: [
+                  {
+                      label: 'Gestionar Horarios',
+                      route: '/principal/menu/reservas'
+                  }
+              ]
+          },
             {
                 label: 'Usuarios',
                 icon: 'pi pi-users',
                 items: [
                     {
-                        label: 'Angular',
-                        url: 'https://angular.io/'
+                        label: 'Gestionar Usuarios',
+                        url: '/principal/menu/usuarios'
                     },
-                    {
-                        label: 'Vite.js',
-                        url: 'https://vitejs.dev/'
-                    }
+
                 ]
             }
         ];

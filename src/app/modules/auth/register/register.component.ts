@@ -50,9 +50,6 @@ export class RegisterComponent implements OnInit {
       alert('Debes aceptar los términos y condiciones');
       return;
     }
-
-    // Aquí puedes agregar la lógica de registro, como enviar los datos a un servidor
-
-    this.router.navigate(['/principal/inicio']);
+    this.router.navigate(['/principal/menu']);
   }
 }

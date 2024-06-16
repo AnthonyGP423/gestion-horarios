@@ -18,7 +18,7 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
     navigateToHorarios() {
-        this.router.navigate(['/principal/inicio']);
+        this.router.navigate(['/principal/menu']);
     }
   value1: string | undefined;
   value2!: string;
