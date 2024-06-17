@@ -1,20 +1,79 @@
 <div class="contenedor">
   <div class="card">
-    <p-table [value]="ListHorarios" [tableStyle]="{ 'min-width': '50rem' }">
+    <p-table
+      #dt2
+      [value]="ListHorarios"
+      styleClass="p-datatable-gridlines"
+      [tableStyle]="{ 'min-width': '125rem' }"
+      [paginator]="true"
+      [showCurrentPageReport]="true"
+      [rows]="5"
+      responsiveLayout="scroll"
+    >
       <ng-template pTemplate="header">
         <tr>
-          <th>Dia</th>
-          <th>Mes</th>
-          <th>Descripcion</th>
-          <th>Turno</th>
+          <th pSortableColumn="id" style="width: 11%">
+            ID <p-sortIcon field="id" />
+          </th>
+          <th pSortableColumn="Nombre" style="width: 11%">
+            Nombre <p-sortIcon field="Nombre" />
+          </th>
+          <th pSortableColumn="Descripcion" style="width: 11%">
+            Descripcion<p-sortIcon field="Descripcion" />
+          </th>
+          <th pSortableColumn="Fecha_inicio" style="width: 11%">
+            Fecha Inicio<p-sortIcon field="Fecha_inicio" />
+          </th>
+          <th pSortableColumn="Fecha_fin" style="width: 11%">
+            Fecha Final<p-sortIcon field="Fecha_fin" />
+          </th>
+          <th pSortableColumn="Creador_id" style="width: 11%">
+            Creado Por<p-sortIcon field="Creador_id" />
+          </th>
+          <th pSortableColumn="Fecha_creacion" style="width: 11%">
+            Dia Creado<p-sortIcon field="Fecha_creacion" />
+          </th>
+          <th pSortableColumn="Fecha_creacion" style="width: 11%">
+            Ubicacion<p-sortIcon field="Fecha_creacion" />
+          </th>
+          <th pSortableColumn="Fecha_creacion" style="width: 11%">
+            Tipo<p-sortIcon field="Fecha_creacion" />
+          </th>
+          <th pSortableColumn="Fecha_creacion" style="width: 11%">
+            Trabajador<p-sortIcon field="Fecha_creacion" />
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <p-columnFilter
+              type="text"
+              field="id"
+              placeholder="Buscar ID"
+              ariaLabel="Filter Name"
+            />
+          </th>
+          <th>
+            <p-columnFilter
+              type="text"
+              field="Nombre"
+              placeholder="Nombre"
+              ariaLabel="Filter Country"
+            />
+          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-horario>
         <tr>
-          <td>{{ horario.dia }}</td>
-          <td>{{ horario.mes }}</td>
-          <td>{{ horario.descripcion }}</td>
-          <td>{{ horario.quantity }}</td>
+          <td>{{ horario.id }}</td>
+          <td>{{ horario.Nombre }}</td>
+          <td>{{ horario.Descripcion }}</td>
+          <td>{{ horario.Fecha_inicio | date : "dd/MM/yyyy HH:mm:ss" }}</td>
+          <td>{{ horario.Fecha_fin | date : "dd/MM/yyyy HH:mm:ss" }}</td>
+          <td>{{ horario.Creador_id }}</td>
+          <td>{{ horario.Fecha_creacion | date : "dd/MM/yyyy HH:mm:ss" }}</td>
+          <td>{{ horario.Ubicacion }}</td>
+          <td>{{ horario.Tipo }}</td>
+          <td>{{ horario.Trabajador_id }}</td>
         </tr>
       </ng-template>
     </p-table>

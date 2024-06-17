@@ -18,7 +18,6 @@ export const routes: Routes = [
         { path: 'register', component: RegisterComponent },
         {
           path: 'menu', component: HomeComponent, children: [
-            { path: '', pathMatch: 'full', redirectTo: 'horarios' }, // Redirige a horarios por defecto
             { path: 'horarios', component: HorariosListarComponent },
             { path: 'reservas', component: ReservasListarComponent },
             { path: 'usuarios', component: UsuariosListarComponent }
