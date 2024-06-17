@@ -1,0 +1,56 @@
+html {
+    font-size: 14px;
+}
+
+body {
+    font-family: var(--font-family);
+    font-weight: normal;
+    background: var(--surface-ground);
+    color: var(--text-color);
+    padding: 1rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.contenedor {
+    width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.pad {
+    padding-bottom: 10px;
+}
+
+.card {
+    background: var(--surface-card);
+    padding: 1rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    p-table {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .p-datatable-gridlines {
+        min-width: 100%;
+    }
+
+    .p-datatable-gridlines th,
+    .p-datatable-gridlines td {
+        white-space: nowrap;
+    }
+}

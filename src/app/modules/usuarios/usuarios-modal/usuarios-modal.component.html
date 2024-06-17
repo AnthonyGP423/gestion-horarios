@@ -1,0 +1,96 @@
+<div class="pl-5 pr-5">
+  <div class="grid">
+    <div class="col-12 lg:col-6 mt-4">
+      <p-floatLabel>
+        <input
+          [disabled]="isModoVer()"
+          class="w-full"
+          pInputText
+          id="idReserva"
+          [(ngModel)]="usuarios.Nombre"
+        />
+        <label for="Nombre">Nombre</label>
+      </p-floatLabel>
+    </div>
+    <div class="col-12 lg:col-6 mt-4">
+      <p-floatLabel>
+        <input
+          [disabled]="isModoVer()"
+          class="w-full"
+          pInputText
+          id="usuario"
+          [(ngModel)]="usuarios.Apellido"
+        />
+        <label for="Apellido">Apellido</label>
+      </p-floatLabel>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-12 lg:col-6 mt-4">
+      <p-floatLabel>
+        <input
+          [disabled]="isModoVer()"
+          class="w-full"
+          pInputText
+          id="fecha"
+          [(ngModel)]="usuarios.Correo"
+        />
+        <label for="Correo">Correo</label>
+      </p-floatLabel>
+    </div>
+    <div class="col-12 lg:col-6 mt-4">
+      <p-floatLabel>
+        <input
+          [disabled]="isModoVer()"
+          class="w-full"
+          pInputText
+          id="descripcion"
+          [(ngModel)]="usuarios.Telefono"
+        />
+        <label for="Telefono">Telefono</label>
+      </p-floatLabel>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-12 lg:col-6 mt-4">
+      <p-floatLabel>
+        <input
+          [disabled]="isModoVer()"
+          class="w-full"
+          pInputText
+          id="estado"
+          [(ngModel)]="usuarios.Dni"
+        />
+        <label for="Dni">Dni</label>
+      </p-floatLabel>
+    </div>
+    <div class="col-12 lg:col-6 mt-4">
+      <p-floatLabel>
+        <input
+          [disabled]="isModoVer()"
+          class="w-full"
+          pInputText
+          id="horario"
+          [(ngModel)]="usuarios.Estado_civil"
+        />
+        <label for="Estado_civil">Estado Civil</label>
+      </p-floatLabel>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-12 lg:col-6 mt-4">
+      <p-floatLabel>
+        <input
+          [disabled]="isModoVer()"
+          class="w-full"
+          pInputText
+          id="estado"
+          [(ngModel)]="usuarios.Direccion"
+        />
+        <label for="Direccion">Direccion</label>
+      </p-floatLabel>
+    </div>
+  </div>
+</div>

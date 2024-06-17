@@ -11,8 +11,16 @@
       responsiveLayout="scroll"
     >
       <ng-template pTemplate="header">
+        <div class="flex pad">
+          <p-button
+            (onClick)="onClickNuevoHorario()"
+            label="Nuevo"
+            icon="pi pi-plus-circle"
+          />
+          <p-iconField iconPosition="left" class="ml-auto"> </p-iconField>
+        </div>
         <tr>
-          <th pSortableColumn="id" style="width: 11%">
+          <th pSortableColumn="id" style="width: 11%; text-align: right">
             ID <p-sortIcon field="id" />
           </th>
           <th pSortableColumn="Nombre" style="width: 11%">
@@ -33,15 +41,16 @@
           <th pSortableColumn="Fecha_creacion" style="width: 11%">
             Dia Creado<p-sortIcon field="Fecha_creacion" />
           </th>
-          <th pSortableColumn="Fecha_creacion" style="width: 11%">
-            Ubicacion<p-sortIcon field="Fecha_creacion" />
+          <th pSortableColumn="Ubicacion" style="width: 11%">
+            Ubicacion<p-sortIcon field="Ubicacion" />
           </th>
-          <th pSortableColumn="Fecha_creacion" style="width: 11%">
-            Tipo<p-sortIcon field="Fecha_creacion" />
+          <th pSortableColumn="Tipo" style="width: 11%">
+            Tipo<p-sortIcon field="Tipo" />
           </th>
-          <th pSortableColumn="Fecha_creacion" style="width: 11%">
-            Trabajador<p-sortIcon field="Fecha_creacion" />
+          <th pSortableColumn="Trabajador_id" style="width: 11%">
+            Trabajador<p-sortIcon field="Trabajador_id" />
           </th>
+          <th>Acciones</th>
         </tr>
         <tr>
           <th>
@@ -74,14 +83,27 @@
           <td>{{ horario.Ubicacion }}</td>
           <td>{{ horario.Tipo }}</td>
           <td>{{ horario.Trabajador_id }}</td>
+
           <td>
-            <button
-              type="button"
-              pButton
-              pRipple
-              icon="pi pi-plus"
-              (click)="selectHorario(horario)">
-            </button>
+            <p-button
+              (onClick)="onClickVerHorario(horario)"
+              [style]="buttonStyle"
+              icon="pi pi-eye"
+              [rounded]="true"
+            />
+            <p-button
+              (onClick)="onClickModificarHorario(horario)"
+              [style]="buttonStyle"
+              icon="pi pi-pencil"
+              [rounded]="true"
+              severity="contrast"
+            />
+            <p-button
+              [style]="buttonStyle"
+              icon="pi pi-trash"
+              [rounded]="true"
+              severity="danger"
+            />
           </td>
         </tr>
       </ng-template>

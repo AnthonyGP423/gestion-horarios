@@ -25,7 +25,7 @@ import { CheckboxModule } from 'primeng/checkbox';
   constructor(private router: Router) {}
 
   navigateToMenu() {
-    this.router.navigate(['/principal/menu']);
+    this.router.navigate(['/principal/menu/inicio']);
   }
 
   value1: string | undefined;

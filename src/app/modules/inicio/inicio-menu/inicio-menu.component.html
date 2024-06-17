@@ -1,0 +1,62 @@
+<div class="contenedor">
+  <div class="card">
+    <div class="centro">
+      <h1>Gestor de Horarios</h1>
+    </div>
+    <main class="fuenteletra p-grid p-nogutter">
+      <div class="p-col-12 p-md-6 p-lg-4">
+        <div class="module">
+          <h2>Gestión de Horarios</h2>
+          <p>
+            Esta sección permite definir y gestionar los horarios de trabajo
+            para los empleados de la empresa. Incluye funciones para crear
+            nuevos horarios, modificar los existentes, y eliminar horarios
+            obsoletos.
+          </p>
+          <div class="p-d-flex p-jc-center p-mt-3 centro">
+            <p-button
+              label="Registrar Horarios"
+              (click)="horarios()"
+            ></p-button>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-col-12 p-md-6 p-lg-4">
+        <div class="module">
+          <h2>Gestión de Reservas</h2>
+          <p>
+            En esta sección se pueden realizar reservas de recursos o
+            instalaciones de la empresa, como salas de reuniones, equipos
+            especiales, etc. Los empleados pueden consultar la disponibilidad y
+            realizar reservas según sus necesidades.
+          </p>
+          <div class="p-d-flex p-jc-center p-mt-3 centro">
+            <p-button
+              label="Registrar Reservas"
+              (click)="reservas()"
+            ></p-button>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-col-12 p-md-6 p-lg-4">
+        <div class="module">
+          <h2>Gestión de Usuarios</h2>
+          <p>
+            Esta sección permite gestionar los usuarios del sistema de gestión
+            de horarios. Incluye funciones para agregar nuevos usuarios, asignar
+            roles (administrador, usuario estándar, etc.), y modificar
+            información de usuarios existentes.
+          </p>
+          <div class="p-d-flex p-jc-center p-mt-3 centro">
+            <p-button
+              label="Registrar Usuarios"
+              (click)="usuarios()"
+            ></p-button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

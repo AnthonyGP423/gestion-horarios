@@ -1,1 +1,91 @@
-<p>usuarios-listar works!</p>
+<div class="contenedor">
+  <div class="card">
+    <div class="grid">
+      <div class="col-12 lg:col-12">
+        <p-table
+          #tblUsuariosListar
+          [value]="usuarios"
+          [paginator]="true"
+          [rows]="5"
+          [tableStyle]="{ 'min-width': '50rem' }"
+          [globalFilterFields]="[
+            'idUsuario',
+            'Nombre',
+            'Apellido',
+            'Correo',
+            'Telefono'
+          ]"
+          [rowsPerPageOptions]="[5, 10, 20]"
+          responsiveLayout="scroll"
+        >
+          <ng-template pTemplate="caption">
+            <div class="grid lg:col-12 mt-auto">
+              <p-button
+                (onClick)="onClickNuevoUsuario()"
+                label="Nuevo"
+                icon="pi pi-plus-circle"
+              ></p-button>
+              <div class="input-group ml-auto">
+                <p-inputIcon>
+                  <i class="pi pi-search"></i>
+                </p-inputIcon>
+                <input
+                  pInputText
+                  type="text"
+                  (input)="applyFilterGlobal($event, 'contains')"
+                  placeholder="Buscar..."
+                />
+              </div>
+            </div>
+          </ng-template>
+          <ng-template pTemplate="header">
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Correo</th>
+              <th>Telefono</th>
+              <th>Dni</th>
+              <th>Estado Civil</th>
+              <th>Direccion</th>
+              <th>Acciones</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-usuario>
+            <tr>
+              <td>{{ usuario.IdUsuario }}</td>
+              <td>{{ usuario.Nombre }}</td>
+              <td>{{ usuario.Apellido }}</td>
+              <td>{{ usuario.Correo }}</td>
+              <td>{{ usuario.Telefono }}</td>
+              <td>{{ usuario.Dni }}</td>
+              <td>{{ usuario.Estado_civil }}</td>
+              <td>{{ usuario.Direccion }}</td>
+              <td>
+                <p-button
+                  (onClick)="onClickVerUsuario(usuario)"
+                  [style]="buttonStyle"
+                  icon="pi pi-eye"
+                  [rounded]="true"
+                ></p-button>
+                <p-button
+                  (onClick)="onClickModificarUsuario(usuario)"
+                  [style]="buttonStyle"
+                  icon="pi pi-pencil"
+                  [rounded]="true"
+                  severity="contrast"
+                ></p-button>
+                <p-button
+                  [style]="buttonStyle"
+                  icon="pi pi-trash"
+                  [rounded]="true"
+                  severity="danger"
+                ></p-button>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,16 +8,17 @@ import { HorariosListarComponent } from './modules/horarios/horarios-listar/hora
 import { ReservasListarComponent } from './modules/reservas/reservas-listar/reservas-listar.component';
 import { UsuariosListarComponent } from './modules/usuarios/usuarios-listar/usuarios-listar.component';
 import { MenuBarComponent } from './shared/components/menu-bar/menu-bar.component';
-
+import { InicioMenuComponent } from './modules/inicio/inicio-menu/inicio-menu.component';
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'principal' },
   {
     path: 'principal', component: MainLayoutComponent, children: [
-        { path: '', pathMatch: 'full', redirectTo: 'login' }, // Redirige a login como página de inicio
+        { path: '', pathMatch: 'full', redirectTo: 'login' },
         { path: 'login', component: LoginComponent },
         { path: 'register', component: RegisterComponent },
         {
           path: 'menu', component: HomeComponent, children: [
+            { path: 'inicio', component: InicioMenuComponent },
             { path: 'horarios', component: HorariosListarComponent },
             { path: 'reservas', component: ReservasListarComponent },
             { path: 'usuarios', component: UsuariosListarComponent }
@@ -26,9 +27,3 @@ export const routes: Routes = [
     ]
   }
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}

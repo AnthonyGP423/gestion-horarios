@@ -1,15 +1,3 @@
-/* Estilos existentes */
-.contenedor {
-  width: 900px;
-  margin: 0 auto;
-  padding: 1rem;
-  border-radius: 5px;
-}
-
-.titulo {
-  color: white;
-}
-
 html {
   font-size: 14px;
 }
@@ -24,6 +12,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.contenedor {
+  width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.pad {
+  padding-bottom: 10px;
+}
+
 .card {
   background: var(--surface-card);
   padding: 1rem;
@@ -31,7 +30,6 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Estilos adicionales para hacer que la tabla sea responsiva */
 @media screen and (max-width: 768px) {
   .contenedor {
     width: 100%;

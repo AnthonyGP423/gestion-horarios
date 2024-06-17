@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { TableModule } from 'primeng/table';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Table, TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 import { Horario } from '../../../core/models/horario';
 import { PaginatorModule } from 'primeng/paginator';
@@ -7,17 +7,36 @@ import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { IconFieldModule } from 'primeng/iconfield';
+import { InputIconModule } from 'primeng/inputicon';
+import { InputTextModule } from 'primeng/inputtext';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { FooterModalComponent } from '../../../shared/components/footer-modal/footer-modal.component';
+import {
+  TYPE_MODAL_MODIFICAR,
+  TYPE_MODAL_NUEVO,
+  TYPE_MODAL_VER,
+} from '../../../shared/utils/constants';
+import { HorariosModalComponent } from '../horarios-modal/horarios-modal.component';
 
 @Component({
   selector: 'app-horarios-listar',
   standalone: true,
-  imports: [ButtonModule, RippleModule, ToastModule, TableModule, CommonModule],
+  imports: [
+    ButtonModule,
+    IconFieldModule,
+    InputIconModule,
+    RippleModule,
+    ToastModule,
+    TableModule,
+    CommonModule,
+    InputTextModule,
+  ],
   templateUrl: './horarios-listar.component.html',
   styleUrls: ['./horarios-listar.component.scss'],
-  providers: [MessageService]
+  providers: [MessageService, DialogService],
 })
-export class HorariosListarComponent implements OnInit{
-
+export class HorariosListarComponent implements OnInit {
   ListHorarios: Horario[] = [
     {
       id: 1,
@@ -261,7 +280,75 @@ export class HorariosListarComponent implements OnInit{
     },
   ];
 
-  constructor(private messageService: MessageService) {}
+  constructor(
+    private messageService: MessageService,
+    private dialogService: DialogService
+  ) {}
+
+  @ViewChild('tblHorarioListar') tblHorarioListar: Table | undefined;
+
+  ref: DynamicDialogRef | undefined;
+
+  buttonStyle = {
+    width: '2.3rem',
+    height: '2.3rem',
+    'margin-left': '0.5rem',
+  };
+
+  applyFilterGlobal($event: any, stringVal: string) {
+    this.tblHorarioListar?.filterGlobal(
+      ($event.target as HTMLInputElement).value,
+      stringVal
+    );
+  }
+
+  onClickNuevoHorario() {
+    console.log('onClickHorario');
+    this.dialogService.open(HorariosModalComponent, {
+      header: 'Nuevo Horario',
+      width: '80vw',
+      height: '80vh',
+      templates: {
+        footer: FooterModalComponent,
+      },
+      data: {
+        typeModal: TYPE_MODAL_NUEVO,
+        data: undefined,
+      },
+    });
+  }
+
+  onClickVerHorario(horario: Horario) {
+    console.log('onClickVerHorario');
+    this.dialogService.open(HorariosModalComponent, {
+      header: 'Ver Horario',
+      width: '80vw',
+      height: '80vh',
+      templates: {
+        footer: FooterModalComponent,
+      },
+      data: {
+        typeModal: TYPE_MODAL_VER,
+        data: horario,
+      },
+    });
+  }
+
+  onClickModificarHorario(horario: Horario) {
+    console.log('onClickModificarHorario');
+    this.dialogService.open(HorariosModalComponent, {
+      header: 'Modificar horario',
+      width: '80vw',
+      height: '80vh',
+      templates: {
+        footer: FooterModalComponent,
+      },
+      data: {
+        typeModal: TYPE_MODAL_MODIFICAR,
+        data: horario,
+      },
+    });
+  }
 
   ngOnInit(): void {}
 
@@ -269,7 +356,7 @@ export class HorariosListarComponent implements OnInit{
     this.messageService.add({
       severity: 'info',
       summary: 'Horario Seleccionado',
-      detail: `Nombre: ${horario.Nombre}`
+      detail: `Nombre: ${horario.Nombre}`,
     });
   }
 }

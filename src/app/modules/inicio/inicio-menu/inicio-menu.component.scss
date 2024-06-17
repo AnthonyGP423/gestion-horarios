@@ -1,0 +1,53 @@
+/* Estilos generales */
+.centro {
+    text-align: center;
+    color: #005187;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    padding: 1rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.fuenteletra {
+    line-height: 1.6;
+}
+
+.module {
+    background-color: #dceafc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #336ca5;
+}
+
+h3 {
+    color: #74a7e4;
+}
+
+
+
+@media (max-width: 576px) {
+    .module {
+        padding: 15px;
+    }
+
+    .p-grid {
+        grid-template-columns: 1fr;
+    }
+}
