@@ -1,0 +1,45 @@
+<div class="pl-5 pr-5">
+    <div class="grid">
+        <div class="col-12 lg:col-6 mt-4">
+            <p-floatLabel>
+                <input [disabled]="isModoVer()" class="w-full" pInputText id="idReserva" [(ngModel)]="reserva.idReserva" />
+                <label for="idReserva">Número de Reserva</label>
+            </p-floatLabel>
+        </div>  
+        <div class="col-12 lg:col-6 mt-4">
+            <p-floatLabel>
+                <input [disabled]="isModoVer()" class="w-full" pInputText id="usuario" [(ngModel)]="reserva.usuario" />
+                <label for="usuario">Usuario</label>
+            </p-floatLabel>
+        </div>
+    </div>
+    
+    <div class="grid">
+        <div class="col-12 lg:col-6 mt-4">
+            <p-floatLabel>
+                <input [disabled]="isModoVer()" class="w-full" pInputText id="fecha" [(ngModel)]="reserva.fecha" />
+                <label for="fecha">Fecha</label>
+            </p-floatLabel>
+        </div>
+        <div class="col-12 lg:col-6 mt-4">
+            <p-floatLabel>
+                <input [disabled]="isModoVer()" class="w-full" pInputText id="descripcion" [(ngModel)]="reserva.descripcion" />
+                <label for="descripcion">Descripción</label>
+            </p-floatLabel>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="col-12 lg:col-6 mt-4">
+            <p-floatLabel>
+                <input [disabled]="isModoVer()" class="w-full" pInputText id="estado" [(ngModel)]="reserva.estado" />
+                <label for="estado">Estado</label>
+            </p-floatLabel>
+        </div>
+        <div class="col-12 lg:col-6 mt-4">
+            <p-floatLabel>
+                <input [disabled]="isModoVer()" class="w-full" pInputText id="horario" [(ngModel)]="reserva.horario" />
+                <label for="horario">Horario</label>
+            </p-floatLabel>
+        </div>
+    </div>
