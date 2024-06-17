@@ -3,15 +3,21 @@ import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 import { Horario } from '../../../core/models/horario';
 import { PaginatorModule } from 'primeng/paginator';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-horarios-listar',
   standalone: true,
-  imports: [TableModule, CommonModule],
+  imports: [ButtonModule, RippleModule, ToastModule, TableModule, CommonModule],
   templateUrl: './horarios-listar.component.html',
-  styleUrl: './horarios-listar.component.scss',
+  styleUrls: ['./horarios-listar.component.scss'],
+  providers: [MessageService]
 })
-export class HorariosListarComponent {
+export class HorariosListarComponent implements OnInit{
+
   ListHorarios: Horario[] = [
     {
       id: 1,
@@ -254,4 +260,16 @@ export class HorariosListarComponent {
       Trabajador_id: 120,
     },
   ];
+
+  constructor(private messageService: MessageService) {}
+
+  ngOnInit(): void {}
+
+  selectHorario(horario: Horario): void {
+    this.messageService.add({
+      severity: 'info',
+      summary: 'Horario Seleccionado',
+      detail: `Nombre: ${horario.Nombre}`
+    });
+  }
 }

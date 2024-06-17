@@ -74,6 +74,15 @@
           <td>{{ horario.Ubicacion }}</td>
           <td>{{ horario.Tipo }}</td>
           <td>{{ horario.Trabajador_id }}</td>
+          <td>
+            <button
+              type="button"
+              pButton
+              pRipple
+              icon="pi pi-plus"
+              (click)="selectHorario(horario)">
+            </button>
+          </td>
         </tr>
       </ng-template>
     </p-table>
