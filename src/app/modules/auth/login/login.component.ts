@@ -10,19 +10,26 @@ import { CheckboxModule } from 'primeng/checkbox';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, InputTextModule, FloatLabelModule, PasswordModule, ButtonModule, CheckboxModule],
+  imports: [
+    FormsModule,
+    InputTextModule,
+    FloatLabelModule,
+    PasswordModule,
+    ButtonModule,
+    CheckboxModule,
+  ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
-export class LoginComponent {
+  export class LoginComponent {
   constructor(private router: Router) {}
 
-    navigateToHorarios() {
-        this.router.navigate(['/principal/menu']);
-    }
+  navigateToMenu() {
+    this.router.navigate(['/principal/menu']);
+  }
+
   value1: string | undefined;
   value2!: string;
 
   letra: string[] = [];
-
 }
